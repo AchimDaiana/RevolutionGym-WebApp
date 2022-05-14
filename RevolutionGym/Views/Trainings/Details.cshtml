@@ -1,0 +1,33 @@
+﻿@model Training
+
+@{
+    ViewData["Title"] = "Details about a training";
+}
+
+<h1>Detalii despre antrenamentul </h1>
+<div class="col-md-6 offset-2">
+    <img src="@Model.Picture" class="align-baseline" alt="@Model.Name">
+    <div class="card-block">
+        <!--Title-->
+        <h4 class="card-title">@Model.Name</h4>
+        <!--Text-->
+        <p class="card-text">@Model.Description</p>
+        <p class="card-text">@Model.StartHour.ToString("HH:mm")</p>
+        <p class="card-text">@Model.FinishHour.ToString("HH:mm")</p>
+        <p class="card-text"><b>Categoria clasei:</b>@Model.Category.ToString()</p>
+        <p class="card-text">
+            <b>Antrenorul:</b>
+            <a asp-controller="Trainers" asp-action="Details" asp-route-id="@Model.TrainerId">@Model.Trainer.FirstName</a>
+        </p>
+        <p class="card-text">
+            <b>Abonament:</b>
+            <a asp-controller="Subscriptions" asp-action="Details" asp-route-id="@Model.SubscriptionId">@Model.Subscription.Name</a>
+        </p>
+
+
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

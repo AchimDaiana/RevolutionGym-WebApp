@@ -1,0 +1,32 @@
+﻿@model Subscription
+
+@{
+    ViewData["Title"] = "Details of fitness subscription";
+}
+
+<h1>Detalii despre @Model.Name</h1>
+<div class="container marginTop">
+    <div class="row">
+
+        <div class="text-center view overlay hm-white-slight">
+
+            <img src="@Model.Picture" class="img-fluid" alt="@Model.Name">
+            <a href="#">
+                <div class="mask waves-effect waves-light"></div>
+            </a>
+        </div>
+        <div class="card-block float-left">
+            <!--Title-->
+            <h4 class="card-title">@Model.Name</h4>
+            <!--Text-->
+            <p class="card-text">@Model.Description.</p>
+            <p class="card-text"><b>Valabilitate: </b>@Model.Validity</p>
+            <p class="card-text"><b>Pret: </b>@Model.Price</p>
+            <p class="btn btn-group pull-right">
+                <a asp-action="Index" class="btn btn-default">Back to list</a>
+            </p>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model Trainer
+
+
+@{
+    ViewData["Title"] = "Details about trainer";
+}
+
+<h1>Detalii despre antrenorul @Model.FirstName</h1>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label"></label>
+            <input asp-for="FirstName" class="form-control" readonly />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" readonly />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Biography" class="control-label"></label>
+            <textarea asp-for="Biography" class="form-control" readonly></textarea>
+            <span asp-validation-for="Biography" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProfilePicture" class="control-label"></label>
+            <input asp-for="ProfilePicture" class="form-control" readonly />
+            <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            <a class="float-right" asp-action="Index">Back to List</a>
+        </div>
+
+    </div>
+</div>
+

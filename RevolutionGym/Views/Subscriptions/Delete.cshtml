@@ -1,0 +1,49 @@
+﻿@model Subscription
+
+@{
+    ViewData["Title"] = "Delete subscription";
+}
+
+<h1>Sterge un abonament </h1>
+<div class="row">
+    <div class="col-md-8 offset-2">
+
+
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Validity" class="control-label"></label>
+            <input asp-for="Validity" class="form-control" />
+            <span asp-validation-for="Validity" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Picture" class="control-label"></label>
+            <input asp-for="Picture" class="form-control" />
+            <span asp-validation-for="Picture" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Delete" />
+            </form>
+            <a class="float-right" asp-action="Index">Back to List</a>
+        </div>
+
+    </div>
+</div>
+
+
+

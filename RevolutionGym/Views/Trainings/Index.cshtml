@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Training>
+
+@{
+    ViewData["Title"] = "List of fitness trainings";
+}
+
+<h1>Lista antrenamentelor disponibile in fiecare zi</h1>
+@{
+    foreach (var item in Model)
+    {
+        <div class="col-md-12">
+            <img src="@item.Picture" alt="@item.Name" style="max-width: 250px" class="rounded">
+            <h3>
+                <a asp-controller="Trainings" asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
+            </h3>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            @* <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+        </div>
+    }
+
+
+}
+
+<div class="float-right">
+    <a asp-action="Create">Add New Class</a>
+</div>
